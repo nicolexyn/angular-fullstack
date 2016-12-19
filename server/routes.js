@@ -23,9 +23,4 @@ export default function(app) {
     .get((req, res) => {
       res.sendFile(path.resolve(`${app.get('appPath')}/index.html`));
     });
-
-  app.all('/*', function(req, res, next) {
-    // Just send the index.html for other files to support HTML5Mode
-    res.sendFile('index.html', { root: __dirname });
-});
 }
